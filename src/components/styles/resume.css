@@ -1,0 +1,26 @@
+#mainResume{
+    display: grid;
+    place-content: center;
+    height: 100vh;
+    
+}
+#divResume{
+    
+    width: 50rem;
+    height: 100vh;
+    display: grid;
+    place-content: center;
+
+}
+#titles{
+    background-color: white;
+    height: 2.9rem;
+    width: 25rem;
+    text-align: center;
+}
+#resum{
+   
+    box-shadow: 1px 1px 1px 1px grey;
+    height: 20rem;
+    width: 25rem;
+}

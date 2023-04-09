@@ -1,0 +1,31 @@
+#mainOrder{
+    
+    height: 100%;
+    display: grid;
+    justify-content: center;
+
+    
+}
+#renderOrder{
+    background-color: rgb(179, 163, 163);
+    margin: 10px;
+    
+    width: 50rem;
+    border: 1px solid black ;
+    border-radius: 5px;
+    display: flex;
+    justify-content: left;
+    
+}
+#userInfo{
+    width: 33%;
+    border: 1px solid black;
+}
+#direc{
+    width: 33%;
+    border: 1px solid black;
+}
+#product{
+    width: 33%;
+    border: 1px solid black;
+}
