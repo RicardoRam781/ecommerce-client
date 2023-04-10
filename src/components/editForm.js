@@ -15,7 +15,7 @@ export default function EditForm(productId) {
   //   setFile(e.target.files[0])
   //   console.log(e.target.files[0])
   // }
-
+//JURO QUE HAY CAMBIO RAILWAY
   const handleSubmit = async (e) => {
     e.preventDefault();
     const id = productId
