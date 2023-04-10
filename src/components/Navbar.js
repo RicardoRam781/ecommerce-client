@@ -1,6 +1,6 @@
 import React, { useContext, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { AppBar, Button, Toolbar, Typography, Box, Container } from '@mui/material'
+import { AppBar, Button, Toolbar, Typography, Box, Container, Hidden } from '@mui/material'
 import { createTheme, hexToRgb, ThemeProvider } from '@mui/material/styles'
 import { makeStyles } from '@mui/styles'
 import purple from '@mui/material/colors/purple'
@@ -93,15 +93,18 @@ const validate = () =>{
         <ThemeProvider theme={themes}>
             <Box sx={{ flexGrow: 1, }} >
                 <AppBar position='static' color='primary' style={{boxShadow:'none'}}>
-                    <Container maxWidth='none' >
+                 
+                    <Container maxWidth='none'>
+               
                         <Toolbar >
+                            <Hidden smDown> 
                             <Typography variant='h6' sx={{ flexGrow: 1 }}>
                                 <Link to="/" style={{ textDecoration: 'none', color:hexToRgb('#2E5B27')  ,  fontFamily: 'Helvetica Neue Italic',  fontSize:'1.5rem'}} onClick={() => navigate("/index")}>Inicio </Link>
                                
                                 <Link to="/aboutUs" style={{ textDecoration: 'none', color:hexToRgb('#2E5B27')  ,  fontFamily: 'Helvetica Neue Italic',  fontSize:'1.5rem', marginLeft:'1rem'}} onClick={() => navigate("/index")}>Acerca de</Link>
                                 
                             </Typography>
-                            
+                            </Hidden>
                             <Typography variant='h6' sx={{ flexGrow: 1 }}>
                                 <Link to="/" style={{ textDecoration: "none", color:hexToRgb('#2E5B27')  ,  fontFamily: 'Helvetica Neue Italic', fontStyle:'italic', fontSize:'2rem'}} onClick={() => navigate("/index")}>Novedades Rubí</Link>
                             </Typography>
@@ -112,6 +115,7 @@ const validate = () =>{
                             <DropdownButton />
                         </Toolbar>
                     </Container>
+                   
                 </AppBar>
                 <div className={clasess.offset}></div>
             </Box>
