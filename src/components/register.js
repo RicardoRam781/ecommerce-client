@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
-import { Alert, AlertTitle} from '@mui/material';
+import { Alert } from '@mui/material';
 import {useForm} from "react-hook-form"
-import {useNavigate } from 'react-router-dom';
+//import {useNavigate } from 'react-router-dom';
 
 
 export default function Register(props) {
   
-  const {register,formState:{errors},setError,getValues, handleSubmit} = useForm()
-  const navigate = useNavigate()
+  const {register,formState:{errors},getValues, handleSubmit} = useForm()
+ 
   const [isRegister, setIsRegister] = useState(false)
   
  
@@ -126,9 +126,9 @@ export default function Register(props) {
 
         <button className="btn" type="submit" >Aceptar</button>
         <br></br>
-        <a href='#' onClick={props.onClick}>¿Ya tienes una cuenta? Inicia sesion aquí</a>
+        <button  onClick={props.onClick}>¿Ya tienes una cuenta? Inicia sesion aquí</button>
         <br></br>
-        { isRegister == true && (<Alert>Inicio de sesion correcto, redirigiendo</Alert>)}
+        { isRegister === true && (<Alert>Inicio de sesion correcto, redirigiendo</Alert>)}
       </form>
     </div>
   );

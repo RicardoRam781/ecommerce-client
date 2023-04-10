@@ -1,11 +1,11 @@
 import { useState, } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { Alert } from "@mui/material";
 export default function Products(user) {
 
      
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   console.log("USUARIO EN FOREM",user.user)
   
   const [form, setForm] = useState({})

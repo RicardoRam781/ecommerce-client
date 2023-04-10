@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useLocation } from 'react-router-dom'
 import './styles/resume.css'
-import Cookies from "js-cookie";
+//import Cookies from "js-cookie";
 import { Alert } from '@mui/material';
 export default function Resume(props) {
 
-    const isLoggedIn = Cookies.get("userData");
-  const data = JSON.parse(isLoggedIn?.toString() || "{}");
+   // const isLoggedIn = Cookies.get("userData");
+ // const data = JSON.parse(isLoggedIn?.toString() || "{}");
     const location = useLocation()
     const ticket = location.state?.ticket
     console.log("EL TICKET ES",ticket)

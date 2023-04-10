@@ -10,7 +10,7 @@ export default function ShopCart(user,props) {
     if(!user.user ){
         navigate('/')
         }
-    const [cart,setCart] = useContext(CartContext)
+    const [cart] = useContext(CartContext)
     //const cart = JSON.parse(localStorage.getItem('cart'));
     
     console.log("cart",cart)
@@ -46,7 +46,7 @@ export default function ShopCart(user,props) {
                 <div className='countCart'>
                     
                 {cart.map((item) => (
-                    cart.quantity != 0 &&
+                    cart.quantity !== 0 &&
                 <CartCards id={item.id} name={item.name} price={item.price} quantity={item.quantity} img={item.img}
                 
                 />

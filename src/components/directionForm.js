@@ -1,5 +1,5 @@
 import React from 'react'
-import { Alert, AlertTitle} from '@mui/material';
+import { Alert } from '@mui/material';
 import {useForm} from "react-hook-form"
 import {useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
@@ -8,7 +8,7 @@ export default function DirectionForm(props) {
     const {register,formState:{errors}, handleSubmit} = useForm()
     const isLoggedIn = Cookies.get('userData');
     const data = JSON.parse(isLoggedIn?.toString() || "{}")
-    const role = data && data.body ? data.body.role : undefined;
+    //const role = data && data.body ? data.body.role : undefined;
     const userId = data && data.body ? data.body._id : undefined;
     const navigate = useNavigate()
     const onSubmit = async  (direc) => {

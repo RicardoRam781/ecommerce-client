@@ -9,18 +9,18 @@ export default function EditForm(productId) {
 
   const [form, setForm] = useState({})
 
-  const [file, setFile] = useState();
+ // const [file, setFile] = useState();
 
-  const handleFile = (e) => {
-    setFile(e.target.files[0])
-    console.log(e.target.files[0])
-  }
+  // const handleFile = (e) => {
+  //   setFile(e.target.files[0])
+  //   console.log(e.target.files[0])
+  // }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const id = productId
     const formData = new FormData();
-    formData.append('file', file);
+    //formData.append('file', file);
     formData.append("form", JSON.stringify(form));
     console.log(id.productId);
     console.log(form)

@@ -20,7 +20,7 @@ import Orders from './components/orders';
 const isLoggedIn = Cookies.get("userData");
 const data = JSON.parse(isLoggedIn?.toString() || "{}");
 const role = data && data.body ? data.body.role : undefined;
-const userId = data && data.body ? data.body._id : undefined;
+//const userId = data && data.body ? data.body._id : undefined;
 
 
 

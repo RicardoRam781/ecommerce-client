@@ -1,23 +1,18 @@
-import React, { useContext, useEffect, useState } from "react";
-import DirectionForm from "./directionForm";
+import React, { useContext, useEffect, useState, useCallback} from "react";
 import "./styles/pay.css";
 import { CartContext } from "./cartContext";
-import CartCards from "./shopcartCards";
+
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-import FormPay from "./paymentForm"
+
 import { loadStripe } from '@stripe/stripe-js';
 import {
     Elements,
     CardElement,
     useStripe,
     useElements,
-    PaymentElement,
-    CardNumberElement,
-    CardCvcElement,
-    CardExpiryElement,
   } from "@stripe/react-stripe-js";
-import { Alert, CardActions, CardMedia } from "@mui/material";
+import { Alert} from "@mui/material";
 
   const stripePromise = loadStripe(
     "pk_test_51Mqs4NABeCEXzzKGjuj90BwvxMDP2zQjCQYfw3gyv6pR5TDDf51FAh3WZV68TLxHmvLYcQUosQY6PLglEZCH3oOU00DB5EH3y4"
@@ -25,9 +20,9 @@ import { Alert, CardActions, CardMedia } from "@mui/material";
 export default function Pay(user) {
    
   const navigate = useNavigate();
-  const [cart, setCart] = useContext(CartContext);
+  const [cart] = useContext(CartContext);
   const [directions, setDirections] = useState([]);
-  const [delivery, setDelivery] = useState([]);
+  //const [delivery, setDelivery] = useState([]);
   const isLoggedIn = Cookies.get("userData");
   const data = JSON.parse(isLoggedIn?.toString() || "{}");
   //const role = data && data.body ? data.body.role : undefined;
@@ -45,11 +40,32 @@ export default function Pay(user) {
 
 
 
-  useEffect(() => {
-    userDirections();
-  }, []);
+  // useEffect(() => {
+  //   userDirections();
+  // }, []);
 
-  const userDirections = async () => {
+  // const userDirections = async () => {
+  //   if (!userId) {
+  //     alert("Debes iniciar sesion para continuar");
+  //     navigate("/user/forms");
+  //   }
+  //   const res = await fetch(`http://localhost:4000/get/direction${userId}`, {
+  //     method: "GET",
+  //   });
+
+  //   res.json()
+  //     .then((data) => {
+  //       if (data.error) {
+  //         alert(data.error);
+  //       } else {
+  //         setDirections(data);
+  //       }
+  //     })
+  //     .catch((err) => console.log(err));
+  // };
+  
+  
+  const userDirections = useCallback(async () => {
     if (!userId) {
       alert("Debes iniciar sesion para continuar");
       navigate("/user/forms");
@@ -57,7 +73,7 @@ export default function Pay(user) {
     const res = await fetch(`http://localhost:4000/get/direction${userId}`, {
       method: "GET",
     });
-
+  
     res.json()
       .then((data) => {
         if (data.error) {
@@ -67,7 +83,11 @@ export default function Pay(user) {
         }
       })
       .catch((err) => console.log(err));
-  };
+  }, [userId, navigate, setDirections]);
+
+  useEffect(() => {
+    userDirections();
+  }, [userDirections]);
 
   const [selectedOption, setSelectedOption] = useState("");
 
@@ -92,7 +112,7 @@ export default function Pay(user) {
    
     const [loading, setLoading] = useState(false);
     let correcOption = selectedOption
-    const direccion = directions.find((obj) => obj.id == correcOption)
+    const direccion = directions.find((obj) => obj.id === correcOption)
     
     
     const handleSubmit = async (e) => {
@@ -125,9 +145,9 @@ export default function Pay(user) {
         }
         
         
-        {cart.map((item) => (
-            console.log(`Product id: ${item.id} quantity: ${item.quantity}`)
-          ))}
+        // {cart.map((item) => (
+        //     console.log(`Product id: ${item.id} quantity: ${item.quantity}`)
+        //   ))}
 
 
         const res = await fetch('http://localhost:4000/new/pay', {

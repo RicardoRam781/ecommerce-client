@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState} from 'react'
+import React, { useContext, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { AppBar, Button, Toolbar, Typography, Box, Container } from '@mui/material'
 import { createTheme, hexToRgb, ThemeProvider } from '@mui/material/styles'
@@ -6,7 +6,6 @@ import { makeStyles } from '@mui/styles'
 import purple from '@mui/material/colors/purple'
 import DropdownButton from './menu'
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import { fontStyle } from '@mui/system'
 import { CartContext } from './cartContext'
 import Cookies from 'js-cookie';
 
@@ -80,7 +79,7 @@ const quanty = cart.reduce((acc,curr) =>{
 
 
 const validate = () =>{
-    if(!role || quanty == 0){
+    if(!role || quanty === 0){
         alert("EL carrito esta vacio")
     } else{
         navigate("/cart")

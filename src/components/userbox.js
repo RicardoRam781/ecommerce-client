@@ -3,7 +3,6 @@ import Register from './register'
 import './styles/userbox.css'
 import { useState } from 'react'
 import Login from './login';
-import { Alert, AlertTitle} from '@mui/material';
 import Cookies from 'js-cookie';
 
 export default function Userbox() {
@@ -14,7 +13,7 @@ export default function Userbox() {
     setIsRegisterMode(!isRegisterMode); // cambia el estado al modo opuesto
   };
 
-  const [state, setState ]= useState(false);
+  //const [state, setState ]= useState(false);
 
   const isLoggedIn = Cookies.get('userData');
       console.log(isLoggedIn)
@@ -23,7 +22,7 @@ export default function Userbox() {
        
     <div className='userbox'>
         <div className='img'> 
-        <img src = 'https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' id='lateral'></img> 
+        <img src = 'https://images.pexels.com/photos/1407305/pexels-photo-1407305.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' id='lateral' alt='userbox IMG'></img> 
         
         
         

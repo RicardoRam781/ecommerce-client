@@ -1,11 +1,11 @@
-import React, { useState,useEffect,useContext} from 'react';
-import { Button, Icon } from '@mui/material';
+import React, { useState } from 'react';
+import { Button } from '@mui/material';
 import { Menu } from '@mui/material';
 import { MenuItem } from '@mui/material';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie';
-import { CartContext } from './cartContext'
+
 const DropdownButton = (props) => {
 
   const isLoggedIn = Cookies.get('userData');
@@ -16,7 +16,7 @@ const DropdownButton = (props) => {
   const user = data && data.body ? data.body.email : undefined;
   console.log(role)
 
-  const [cart,setCart] = useContext(CartContext)
+ 
   const [anchorEl, setAnchorEl] = useState(null);
   
   const handleCookies = () =>{
@@ -35,13 +35,13 @@ const DropdownButton = (props) => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const [active, setActive] = useState(false);
-  const toggle = () => {
-    setActive(!active);
-    console.log(setActive);
-  }
-
-  //() => {navigate("/product/addProduct");handleClose() ;toggle()}
+  // const [active, setActive] = useState(false);
+  // const toggle = () => {
+  //   setActive(!active);
+  //   console.log(setActive);
+  // }
+  
+  
   const navigate = useNavigate();
   return (
     <div display="flex"
@@ -73,7 +73,7 @@ const DropdownButton = (props) => {
       
       }
       {
-        user != undefined && 
+        user !== undefined && 
         <MenuItem onClick={() => {handleClose() ;handleCookies()}}>Cerrar sesion</MenuItem>
       }
       { user === undefined &&

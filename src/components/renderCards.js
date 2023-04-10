@@ -1,9 +1,9 @@
-import { Button } from '@mui/material'
-import React, { useEffect, useState } from 'react'
-import imagen from "./sources/maceta.png"
+
+import React, { useState } from 'react'
+
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import purple from '@mui/material/colors/purple'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 
 

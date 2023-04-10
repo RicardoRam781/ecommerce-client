@@ -1,7 +1,7 @@
 import './styles/showProduct.css'
 //import imagen from "./sources/productss.jpg"
 import RenderCards from "./renderCards"
-import { useEffect, useState, useContext } from 'react'
+import { useEffect, useState } from 'react'
 
 export default function RenderProduct() {
     console.log("Hola mundo",document.cookie)

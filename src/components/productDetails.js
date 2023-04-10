@@ -1,7 +1,7 @@
-import React, { useContext, useState, useEffect } from "react"
-import { json, useParams } from "react-router-dom"
+import React, { useContext, useState } from "react"
+
 import './styles/productDetails.css'
-import imagen from "./sources/maceta.png"
+
 import EditForm from "./editForm";
 import Cookies from 'js-cookie';
 import { CartContext } from "./cartContext";
@@ -48,7 +48,7 @@ const navigate = useNavigate()
 
   const addToCart = () =>{
 
-    if(product.inventario == 0){
+    if(product.inventario === 0){
       alert("Lo sentimos, este producto esta agotado")
     }
     if(!role){
@@ -57,10 +57,10 @@ const navigate = useNavigate()
       navigate("/user/forms")
     } else {
     setCart((currItem)=>{
-      const isItemFound = currItem.find((item) => item.id == product.id)
+      const isItemFound = currItem.find((item) => item.id === product.id)
       if(isItemFound){
         return currItem.map((item) =>{
-          if(item.id == product.id){
+          if(item.id === product.id){
             return {...item, quantity: item.quantity + 1}
           }else {
             return item
@@ -75,12 +75,12 @@ const navigate = useNavigate()
   
 const removeItem = (id) =>{
   setCart((currItem) =>{
-    if(currItem.find((item) => item.id == product.id)?.quantity === 1) {
+    if(currItem.find((item) => item.id === product.id)?.quantity === 1) {
       return currItem.filter((item) => item.id !== product.id);
 
     }else {
       return currItem.map((item) =>{
-        if(item.id == id){
+        if(item.id === id){
           return {...item,quantity:item.quantity -1}
         } else {
           return item 
@@ -90,7 +90,7 @@ const removeItem = (id) =>{
   })
 }
 const getQuantityByid = (id) =>{
-  return cart.find((item) => item.id == id)?.quantity || 0
+  return cart.find((item) => item.id === id)?.quantity || 0
 }
 const quantityPerItem = getQuantityByid(product.id);
   
@@ -126,13 +126,13 @@ const handleClick = async (e) => {
         <div className="showimgs">
 
           <div className='pimg'>
-            <img id="mainImg" src={img}></img>
+            <img id="mainImg" src={img} alt="MAIN IMG"></img>
           </div>
           <div className="simg">    
-            <img className="secondIMG" onClick={imgHandleClick} src={product.img}></img>
-            <img className="secondIMG" onClick={imgHandleClick} src={product.fimg}></img>
-            <img className="secondIMG" onClick={imgHandleClick} src={product.simg}></img>
-            <img className="secondIMG" onClick={imgHandleClick} src={product.timg}></img> 
+            <img className="secondIMG" onClick={imgHandleClick} src={product.img} alt="img"></img>
+            <img className="secondIMG" onClick={imgHandleClick} src={product.fimg} alt="firstImg"></img>
+            <img className="secondIMG" onClick={imgHandleClick} src={product.simg} alt="secondImg"></img>
+            <img className="secondIMG" onClick={imgHandleClick} src={product.timg} alt="thirdIMG"></img> 
               
 
           </div>

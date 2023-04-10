@@ -1,15 +1,16 @@
 
-import React, { useState,useEffect } from 'react'
-import { Alert, Snackbar} from '@mui/material';
+import React, { useState } from 'react'
+import { Alert } from '@mui/material';
 import {useForm} from "react-hook-form"
 import {useNavigate } from 'react-router-dom';
 import Cookies from 'js-cookie';
 
 export default function Login(props) {
 
-    const {register,formState:{errors},setError,getValues, handleSubmit} = useForm()
+    const {register,formState:{errors}, handleSubmit} = useForm()
   const navigate = useNavigate()
   const [loged,setLoged] = useState(false)
+  
   const onSubmit = async (NewUser) => {
      console.log(NewUser)
         
@@ -46,10 +47,10 @@ export default function Login(props) {
               const datau = JSON.parse(isLoggedIn?.toString() || "{}")
               console.log("body",datau)
               const role = datau && datau.body ? datau.body.role : undefined;
-              console.log(role)
+              console.log(role,loged)
               setLoged(true)
             
-               } else if(data.token == undefined){
+               } else if(data.token === undefined){
                 Cookies.remove('userData')
                }
                
@@ -108,7 +109,7 @@ export default function Login(props) {
 
       <button className="btn" type="submit" >Iniciar sesion</button>
       <br></br>
-      <a href='#' onClick={props.onClick}>¿No tienes una cuenta? Crea una aquí</a>
+      <button onClick={props.onClick}>¿No tienes una cuenta? Crea una aquí</button>   
       <br></br>
       { role !== undefined && (<Alert>Inicio de sesion correcto, redirigiendo</Alert>)}
         
