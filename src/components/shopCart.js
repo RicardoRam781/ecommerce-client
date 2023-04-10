@@ -19,7 +19,7 @@ export default function ShopCart(user,props) {
         let sum = 0
         cart.forEach(item => {
             for(let i = 0;i < item.quantity; i++){
-                sum = sum + item.price
+                sum = Number(sum) + Number(item.price)
                 
             }
        });

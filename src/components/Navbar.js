@@ -92,7 +92,7 @@ const validate = () =>{
     return (
         <ThemeProvider theme={themes}>
             <Box sx={{ flexGrow: 1, }} >
-                <AppBar position='static' color='primary' style={{boxShadow:'none'}}>
+                <AppBar position='static' color='primary' style={{boxShadow:'inherit'}}>
                  
                     <Container maxWidth='none'>
                

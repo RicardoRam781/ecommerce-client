@@ -103,8 +103,8 @@
 }
 .cartCard{
  background-color: white;
- border: 1px solid black;
- border-radius: 2px;
+ border: 0.5px solid rgb(52, 107, 54);
+ border-radius: 15px;
  height: 5rem;
  width: 40rem;
  margin: 1rem;
