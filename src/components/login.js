@@ -15,7 +15,7 @@ export default function Login(props) {
      console.log(NewUser)
         
           try{ 
-          const res = await fetch(`http://localhost:4000/login`,{
+          const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/login`,{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'

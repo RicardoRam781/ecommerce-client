@@ -150,7 +150,7 @@ export default function Pay(user) {
         //   ))}
 
 
-        const res = await fetch('http://localhost:4000/new/pay', {
+        const res = await fetch('https://novedades-rosy-api-production.up.railway.app/new/pay', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -18,7 +18,7 @@ export default function PruebaToken() {
     
 
     async function Prueba() {
-        const response = await fetch('http://localhost:4000/login/error');
+        const response = await fetch('https://novedades-rosy-api-production.up.railway.app/login/error');
         const data = await response.json();
         console.log(data);
       }

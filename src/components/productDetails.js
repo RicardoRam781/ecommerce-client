@@ -102,7 +102,7 @@ const handleClick = async (e) => {
   
    const id = product.id
    console.log('click',id)
-  const res = await fetch(`http://localhost:4000/delete/product/${id}`, {
+  const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/delete/product/${id}`, {
     headers:{
       'Authorization': `Bearer ${data.token}`
       },

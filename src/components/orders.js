@@ -13,7 +13,7 @@ export default function Orders() {
     console.log("ORDER DE USESTATE",order)
     
   const getOrders = useCallback(async () => {
-    const res = await fetch("http://localhost:4000/get/orders", {
+    const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/orders", {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${data.token}`

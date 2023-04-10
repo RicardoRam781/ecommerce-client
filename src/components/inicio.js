@@ -40,7 +40,7 @@ export default function Products(user) {
 
 
     formData.append("form", JSON.stringify(form));
-    const res = await fetch('http://localhost:4000/api', {
+    const res = await fetch('https://novedades-rosy-api-production.up.railway.app/api', {
       method: 'POST',
       headers:{
         'Authorization': `Bearer ${data.token}`
