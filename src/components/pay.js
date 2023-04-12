@@ -143,7 +143,7 @@ export default function Pay(user) {
             email:data.body.email
             
         }
-        
+        console.log("TICKET DE SALIDA ",ticket)
         
         // {cart.map((item) => (
         //     console.log(`Product id: ${item.id} quantity: ${item.quantity}`)
