@@ -83,7 +83,7 @@ export default function Pay(user) {
         }
       })
       .catch((err) => console.log(err));
-  }, [userId, navigate, setDirections]);
+  }, [userId, navigate, setDirections,directions]);
 
   useEffect(() => {
     userDirections();
@@ -124,7 +124,7 @@ export default function Pay(user) {
           window.location.reload()
         }
       console.log("PRUEBA DE SUBMIT",sum)
-      console.log("Se enviara a",selectedOption)
+      console.log("Se enviara a",selectedOption, directions)
       const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: "card",
         card: elements.getElement(CardElement),
