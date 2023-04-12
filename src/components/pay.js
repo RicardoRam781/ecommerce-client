@@ -83,7 +83,7 @@ export default function Pay(user) {
         }
       })
       .catch((err) => console.log(err));
-  }, [userId, navigate, setDirections,directions]);
+  }, [userId, navigate, setDirections]);
 
   useEffect(() => {
     userDirections();
