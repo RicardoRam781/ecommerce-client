@@ -70,7 +70,7 @@ export default function Pay(user) {
       alert("Debes iniciar sesion para continuar");
       navigate("/user/forms");
     }
-    const res = await fetch(`http://localhost:4000/get/direction${userId}`, {
+    const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/direction${userId}`, {
       method: "GET",
     });
   
