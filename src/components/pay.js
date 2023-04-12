@@ -112,7 +112,8 @@ export default function Pay(user) {
    
     const [loading, setLoading] = useState(false);
     let correcOption = selectedOption
-    console.log("correct option",correcOption)
+    console.log("correct option",correcOption, )
+    console.log("DIRECCIONES ", directions)
     const direccion = directions.find((obj) => obj.id === correcOption)
     
     
