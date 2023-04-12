@@ -114,7 +114,7 @@ export default function Pay(user) {
     let correcOption = selectedOption
     console.log("correct option",correcOption, )
     console.log("DIRECCIONES ", directions)
-    const direccion = directions.find((obj) => obj.id == correcOption)
+    const direccion = directions.find((obj) => obj.id === correcOption)
     console.log("maomeno direccion",direccion)
     
     const handleSubmit = async (e) => {
