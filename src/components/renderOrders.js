@@ -2,10 +2,11 @@ import React from 'react'
 import './styles/orders.css'
 export default function RenderOrders(props) {
    const direc = props.direccion[0]
-   
+   console.log("props",props)
   return (
     <div id='renderOrder'>
         <div id='userInfo'>
+            <p>Numero de pedido:{props.id}</p>
             <p>Usuario:<br/>{props.email}</p>
             <p>Fecha de solicitud: <br/>{props.date}</p>
         </div>

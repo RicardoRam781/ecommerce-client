@@ -20,7 +20,7 @@ import { Alert} from "@mui/material";
 export default function Pay(user) {
    
   const navigate = useNavigate();
-  const [cart] = useContext(CartContext);
+  const [cart, setCart] = useContext(CartContext);
   const [directions, setDirections] = useState([]);
   //const [delivery, setDelivery] = useState([]);
   const isLoggedIn = Cookies.get("userData");
@@ -111,6 +111,9 @@ export default function Pay(user) {
     
    
     const [loading, setLoading] = useState(false);
+
+    //nueva incorporacion
+
     let correcOption = selectedOption
     console.log("correct option",correcOption, )
     console.log("DIRECCIONES ", directions)
@@ -168,6 +171,11 @@ export default function Pay(user) {
               
                 alert(data.message)
                 localStorage.clear()
+
+
+                
+                setCart(0)                                // 
+
                 navigate("/resume", {state:{ticket}})
 
             }
@@ -276,7 +284,7 @@ console.log("suma total", sum);
           </div>
           <div id="payment">
             <div id="allCards">
-              <h4 id="resum">Total de carrito:{sum}</h4>
+              <h4 id="Cartresum">Total de carrito:{sum}</h4>
               {cart.map((item) => (
                 <div id="item">
                   {item.name} {item.quantity} X {item.price}

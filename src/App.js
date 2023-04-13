@@ -16,6 +16,8 @@ import DirectionForm from './components/directionForm';
 import Cookies from "js-cookie";
 import Resume from './components/resume';
 import Orders from './components/orders';
+import { Drawer, Hidden } from '@mui/material';
+import TemporaryDrawer from './components/drawer';
 
 const isLoggedIn = Cookies.get("userData");
 const data = JSON.parse(isLoggedIn?.toString() || "{}");
@@ -42,26 +44,28 @@ function App() {
   return (
     <main style={{ margin: 0 }}>
 
-    <ShoppingCartProvider>
-      <ThemeProvider theme={themes}>
-        <BrowserRouter>
-          <Menu />
-          <Container style={{ margin: "auto" }} maxWidth="xl">
-            <Routes>
-              <Route path='/product/addProduct' element={<Products user={role}/>} />
-              <Route path='/' element={< RenderProduct user={role}/>} />
-              <Route path='/product/:id' element={< ProductDetails user={role}/>} />
-              <Route path='/cart/payment' element={<Pay user={role}/> } />
-              <Route path='/user/forms' element={<Userbox user={role}/> } />
-              <Route path='/cart' element={<ShopCart user ={role}/> } />
-              <Route path='/new/direction' element={<DirectionForm user={role}/> } />
-              <Route path='/pedidos' element={<Orders user={role}/> } />
-              <Route path='/resume' element={<Resume/> } />
-              </Routes>
-          </Container>
-        </BrowserRouter>
-      </ThemeProvider>
-    </ShoppingCartProvider>
+      <ShoppingCartProvider>
+        <ThemeProvider theme={themes}>
+          <BrowserRouter>
+            <Menu />
+            
+              <Container style={{ margin: "auto" }} maxWidth="xl">
+                <Routes>
+                  <Route path='/product/addProduct' element={<Products user={role} />} />
+                  <Route path='/' element={< RenderProduct user={role} />} />
+                  <Route path='/product/:id' element={< ProductDetails user={role} />} />
+                  <Route path='/cart/payment' element={<Pay user={role} />} />
+                  <Route path='/user/forms' element={<Userbox user={role} />} />
+                  <Route path='/cart' element={<ShopCart user={role} />} />
+                  <Route path='/new/direction' element={<DirectionForm user={role} />} />
+                  <Route path='/pedidos' element={<Orders user={role} />} />
+                  <Route path='/resume' element={<Resume />} />
+                </Routes>
+              </Container>
+            
+          </BrowserRouter>
+        </ThemeProvider>
+      </ShoppingCartProvider>
     </main>
   )
 }
