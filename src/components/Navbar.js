@@ -1,6 +1,6 @@
 import React, { useContext, useEffect} from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { AppBar, Button, Toolbar, Typography, Box, Container, Hidden } from '@mui/material'
+import { AppBar, Button, Toolbar, Typography, Box, Container } from '@mui/material'
 import { createTheme, hexToRgb, ThemeProvider } from '@mui/material/styles'
 import { makeStyles } from '@mui/styles'
 import purple from '@mui/material/colors/purple'
