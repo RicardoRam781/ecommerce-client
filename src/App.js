@@ -3,7 +3,7 @@ import Menu from './components/Navbar';
 import Products from './components/inicio'
 import ProductDetails from './components/productDetails'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
-import { Container } from '@mui/system';
+//import { Container } from '@mui/system';
 import RenderProduct from './components/card';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 import purple from '@mui/material/colors/purple'
@@ -48,7 +48,7 @@ function App() {
           <BrowserRouter>
             <Menu />
             
-              <Container style={{ margin: "auto" }} maxWidth="xl">
+              {/* <Container style={{ margin: "auto" }} maxWidth="xl">     */}
                 <Routes>
                   <Route path='/product/addProduct' element={<Products user={role} />} />
                   <Route path='/' element={< RenderProduct user={role} />} />
@@ -60,7 +60,7 @@ function App() {
                   <Route path='/pedidos' element={<Orders user={role} />} />
                   <Route path='/resume' element={<Resume />} />
                 </Routes>
-              </Container>
+              {/* </Container> */}
             
           </BrowserRouter>
         </ThemeProvider>
