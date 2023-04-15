@@ -20,9 +20,9 @@ export default function AboutUs() {
                     <p>Facebook</p>
                 </div>
             </div>
-            <div id='Usimg' alt='aboutUsImg'>
+            <div id='Usimg' >
                
-                <img src='https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg'></img>
+                <img alt='usImg' src='https://static.fundacion-affinity.org/cdn/farfuture/PVbbIC-0M9y4fPbbCsdvAD8bcjjtbFc0NSP3lRwlWcE/mtime:1643275542/sites/default/files/los-10-sonidos-principales-del-perro.jpg' ></img>
             </div>
         </div>
     </main>
