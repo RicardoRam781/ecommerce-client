@@ -4,7 +4,6 @@ import { CartContext } from "./cartContext";
 
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-
 import { loadStripe } from '@stripe/stripe-js';
 import {
     Elements,
@@ -19,6 +18,8 @@ import { Alert} from "@mui/material";
   );
 export default function Pay(user) {
    
+
+  
   const navigate = useNavigate();
   const [cart, setCart] = useContext(CartContext);
   const [directions, setDirections] = useState([]);
@@ -109,7 +110,7 @@ export default function Pay(user) {
     const elements = useElements();
     
     
-   
+    
     const [loading, setLoading] = useState(false);
 
     //nueva incorporacion
@@ -194,9 +195,16 @@ export default function Pay(user) {
    
     
   return (
+    
+    
+
+    
+
+
     <form onSubmit={handleSubmit}>
         <div className="CardContent">
-         
+        
+
 
     <CardElement options={{
           style: {
@@ -234,7 +242,7 @@ export default function Pay(user) {
 let sum = 0;
 cart.forEach((item) => {
   for (let i = 0; i < item.quantity; i++) {
-    sum = sum + item.price;
+    sum = Number(sum) + Number(item.price);
   }
 });
 console.log("suma total", sum);

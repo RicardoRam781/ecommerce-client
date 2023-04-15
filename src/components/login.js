@@ -39,7 +39,7 @@ export default function Login(props) {
               }
               if(data.token){ 
                 //expires:0.00208333
-              Cookies.set('userData', JSON.stringify(userData) , { expires:0.00208333, path: '/', sameSite: 'strict' });
+              Cookies.set('userData', JSON.stringify(userData) , { expires:0.04, path: '/', sameSite: 'strict' });
               
 
               const isLoggedIn = Cookies.get('userData');

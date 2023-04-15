@@ -16,6 +16,7 @@ import DirectionForm from './components/directionForm';
 import Cookies from "js-cookie";
 import Resume from './components/resume';
 import Orders from './components/orders';
+import AboutUs from './aboutUs';
 
 
 const isLoggedIn = Cookies.get("userData");
@@ -59,6 +60,7 @@ function App() {
                   <Route path='/new/direction' element={<DirectionForm user={role} />} />
                   <Route path='/pedidos' element={<Orders user={role} />} />
                   <Route path='/resume' element={<Resume />} />
+                  <Route path='/aboutUs' element={<AboutUs />} />
                 </Routes>
               {/* </Container> */}
             
