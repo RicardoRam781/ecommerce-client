@@ -14,7 +14,7 @@ export default function RenderProduct() {
     }, [])
 
     const getData = async () => {
-        const res = await fetch('http://localhost:4000/inicio') // http://localhost:4000
+        const res = await fetch('https://novedades-rosy-api-production.up.railway.app/inicio') // http://localhost:4000
         const data = await res.json()
         console.log(data);
         setProduct(data)
