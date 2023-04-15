@@ -9,7 +9,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* background-color: rgb(235, 235, 235); */
   background-color: whitesmoke;
-  
+  overflow-x: hidden;
   
   font-family: 'Roboto', sans-serif;
 }
