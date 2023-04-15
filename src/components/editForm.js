@@ -20,19 +20,17 @@ export default function EditForm(productId) {
     e.preventDefault();
     const id = productId
     const formData = new FormData();
-    //formData.append('file', file);
+  
     formData.append("form", JSON.stringify(form));
     console.log(id.productId);
-    console.log(form)
-    console.log("DATA TOKEN MANDANDO LA BACKEND",data.token)
-    const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/update/product/${id.productId}`, {
-      method: 'PUT',
+    
+    
+    const res = await fetch(`http://localhost:4000/update/${id.productId}`,{
+      method:'PUT',
       headers:{
-        'Content-Type': 'application/json',
         'Authorization': `Bearer ${data.token}`
-        },
-      body: formData,
-      
+      },
+      body:formData
     })
     
     res.json().then(data => {
