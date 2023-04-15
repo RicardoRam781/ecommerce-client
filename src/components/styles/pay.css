@@ -2,15 +2,15 @@
     display: grid;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin-top: 20px;
- 
+    height: 92vh;
+    
+    
    
 }
 .payDiv{
     background-color: white;
-    width: 70rem;
-    height: 70%;
+    width: 90rem;
+    height: 100%;
     display: grid;
     /* border: 1px solid black; */
     box-shadow: 0 0 1px 1px grey;

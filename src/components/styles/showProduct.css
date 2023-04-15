@@ -57,7 +57,23 @@
    font-size: large;
    font-weight: bold;
    transition: 0.2s; 
+   text-decoration:none ;
 }
 .product__price:hover{
     color: #2E5B27;
+}
+
+
+@media screen and (max-width:480px){
+    .product{
+        height: 10rem;
+        width: 80%;
+        margin-left:0;
+        margin-right:0;
+        display: flex;
+    }
+    .product__image{
+        width: 180px;
+        height: 160px;
+    }
 }

@@ -4,7 +4,6 @@ import { CartContext } from "./cartContext";
 
 import Cookies from "js-cookie";
 import { useNavigate } from "react-router-dom";
-
 import { loadStripe } from '@stripe/stripe-js';
 import {
     Elements,
@@ -19,8 +18,10 @@ import { Alert} from "@mui/material";
   );
 export default function Pay(user) {
    
+
+  
   const navigate = useNavigate();
-  const [cart] = useContext(CartContext);
+  const [cart, setCart] = useContext(CartContext);
   const [directions, setDirections] = useState([]);
   //const [delivery, setDelivery] = useState([]);
   const isLoggedIn = Cookies.get("userData");
@@ -70,7 +71,7 @@ export default function Pay(user) {
       alert("Debes iniciar sesion para continuar");
       navigate("/user/forms");
     }
-    const res = await fetch(`http://localhost:4000/get/direction${userId}`, {
+    const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/direction${userId}`, {
       method: "GET",
     });
   
@@ -109,11 +110,16 @@ export default function Pay(user) {
     const elements = useElements();
     
     
-   
-    const [loading, setLoading] = useState(false);
-    let correcOption = selectedOption
-    const direccion = directions.find((obj) => obj.id === correcOption)
     
+    const [loading, setLoading] = useState(false);
+
+    //nueva incorporacion
+
+    let correcOption = selectedOption
+    console.log("correct option",correcOption, )
+    console.log("DIRECCIONES ", directions)
+    const direccion = directions.find((obj) => obj.id.toString() === correcOption.toString())
+    console.log("maomeno direccion",direccion)
     
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -122,7 +128,7 @@ export default function Pay(user) {
           window.location.reload()
         }
       console.log("PRUEBA DE SUBMIT",sum)
-      console.log("Se enviara a",selectedOption)
+      console.log("Se enviara a",selectedOption, directions)
       const { error, paymentMethod } = await stripe.createPaymentMethod({
         type: "card",
         card: elements.getElement(CardElement),
@@ -143,7 +149,7 @@ export default function Pay(user) {
             email:data.body.email
             
         }
-        
+        console.log("TICKET DE SALIDA ",ticket)
         
         // {cart.map((item) => (
         //     console.log(`Product id: ${item.id} quantity: ${item.quantity}`)
@@ -166,6 +172,11 @@ export default function Pay(user) {
               
                 alert(data.message)
                 localStorage.clear()
+
+
+                
+                setCart(0)                                // 
+
                 navigate("/resume", {state:{ticket}})
 
             }
@@ -184,9 +195,16 @@ export default function Pay(user) {
    
     
   return (
+    
+    
+
+    
+
+
     <form onSubmit={handleSubmit}>
         <div className="CardContent">
-         
+        
+
 
     <CardElement options={{
           style: {
@@ -224,7 +242,7 @@ export default function Pay(user) {
 let sum = 0;
 cart.forEach((item) => {
   for (let i = 0; i < item.quantity; i++) {
-    sum = sum + item.price;
+    sum = Number(sum) + Number(item.price);
   }
 });
 console.log("suma total", sum);
@@ -274,7 +292,7 @@ console.log("suma total", sum);
           </div>
           <div id="payment">
             <div id="allCards">
-              <h4 id="resum">Total de carrito:{sum}</h4>
+              <h4 id="Cartresum">Total de carrito:{sum}</h4>
               {cart.map((item) => (
                 <div id="item">
                   {item.name} {item.quantity} X {item.price}

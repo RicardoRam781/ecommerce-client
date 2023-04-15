@@ -73,6 +73,10 @@ const DropdownButton = (props) => {
       
       }
       {
+        role === "tr" && 
+        <MenuItem onClick={() => { navigate("/pedidos"); handleClose() }} >Pedidos </MenuItem>
+      }
+      {
         user !== undefined && 
         <MenuItem onClick={() => {handleClose() ;handleCookies()}}>Cerrar sesion</MenuItem>
       }

@@ -34,17 +34,17 @@ export default function ShopCart(user,props) {
   return (
     <main className='cartMain'>
         <div className='divCart'>
-            <div className='cartTitle'>
+            {/* <div className='cartTitle'>
                 <h1 className='pilin'>Bienvenido al carrito</h1>
                
-            </div>
+            </div> */}
             <div className='productsInCart'>
+          
 
-
-
+           
                 
                 <div className='countCart'>
-                    
+                <h1 className='pilin'>Contenido del carrito</h1>
                 {cart.map((item) => (
                     cart.quantity !== 0 &&
                 <CartCards id={item.id} name={item.name} price={item.price} quantity={item.quantity} img={item.img}

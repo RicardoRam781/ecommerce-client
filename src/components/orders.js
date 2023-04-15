@@ -21,7 +21,7 @@ export default function Orders() {
     });
     const orders = await res.json();
     setOrder(orders);
-    console.log(orders);
+    console.log("ORDERS",orders);
   }, [data.token]);
     useEffect(() => {
         
@@ -35,7 +35,7 @@ export default function Orders() {
     {order.map(ord => {
         
       return (
-        <RenderOrders total = {ord.total} email = {ord.email} date = {ord.date} pedido = {ord.pedido} direccion = {ord.direccion}/>
+        <RenderOrders total = {ord.total} email = {ord.email} date = {ord.date} pedido = {ord.pedido} direccion = {ord.direccion} id ={ord.id}/>
         
         // <div id='renderOrder'>
         //   <p>{ord.total}</p>

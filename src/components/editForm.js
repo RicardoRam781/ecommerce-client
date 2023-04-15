@@ -24,9 +24,11 @@ export default function EditForm(productId) {
     formData.append("form", JSON.stringify(form));
     console.log(id.productId);
     console.log(form)
+    console.log("DATA TOKEN MANDANDO LA BACKEND",data.token)
     const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/update/product/${id.productId}`, {
       method: 'PUT',
       headers:{
+        'Content-Type': 'application/json',
         'Authorization': `Bearer ${data.token}`
         },
       body: formData,
@@ -64,7 +66,7 @@ export default function EditForm(productId) {
 
         <input className="inputs" placeholder="Modificar descripcion"
           name="productdescription" value={form.description}
-          onChange={handleChange}></input>
+          onChange={handleChange} type=""></input>
 
         <input className="inputs" placeholder="modificar categoria"
           name="productcategory" value={form.category}
