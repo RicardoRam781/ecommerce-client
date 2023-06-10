@@ -47,7 +47,7 @@ export default function ShopCart(user,props) {
                 <h1 className='pilin'>Contenido del carrito</h1>
                 {cart.map((item) => (
                     cart.quantity !== 0 &&
-                <CartCards id={item.id} name={item.name} price={item.price} quantity={item.quantity} img={item.img}
+                <CartCards id={item.id} name={item.name} price={item.price} quantity={item.quantity} img={item.img} color={item.color} tamaño={item.tamaño}
                 
                 />
                     ))}

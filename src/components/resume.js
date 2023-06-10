@@ -24,7 +24,7 @@ export default function Resume(props) {
                 <h4>Resumen de pedido</h4>
             {products.map((item) => (
                 <div id="item">
-                  {item.name} {item.quantity} 
+                  {item.name} {item.color} {item.tamano} {item.quantity}
                 </div>
               ))}
               <h4>Enviado a:</h4>

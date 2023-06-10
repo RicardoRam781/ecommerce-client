@@ -1,0 +1,16 @@
+#formMain{
+    
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+#form{
+    background-color: white;
+    display: grid;
+    height: 18rem;
+    width: 15rem;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(255,255,255, 0.8);
+}
+

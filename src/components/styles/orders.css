@@ -7,7 +7,7 @@
     
 }
 #renderOrder{
-    background-color: rgb(255, 255, 255);
+    background-color: whitesmoke;
     margin: 10px;
     
     width: 50rem;
@@ -15,17 +15,43 @@
     border-radius: 5px;
     display: flex;
     justify-content: left;
+
     
 }
 #userInfo{
     width: 33%;
-    border: 1px solid black;
+    
+    margin: 5px;
 }
 #direc{
     width: 33%;
-    border: 1px solid black;
+  
+    margin: 5px;
 }
 #product{
     width: 33%;
-    border: 1px solid black;
+    
+    margin: 5px;
+}
+@media screen and (max-width:780px){
+    #renderOrder{
+        display: grid;
+        justify-content: center;
+        width: 100%;
+    }
+    #userInfo{
+        width: 100%;
+        border-bottom: 1px solid black;   
+        margin: 5px;
+    }
+    #direc{
+        width: 100%;
+        border-bottom: 1px solid black;  
+        margin: 5px;
+    }
+    #product{
+        width: 100%;
+        
+        margin: 5px;
+    }
 }

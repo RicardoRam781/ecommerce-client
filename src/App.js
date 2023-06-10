@@ -17,6 +17,13 @@ import Cookies from "js-cookie";
 import Resume from './components/resume';
 import Orders from './components/orders';
 import AboutUs from './aboutUs';
+import FormsPrueba from './components/formsprueba';
+
+import CategoryProvider from './components/categoryContext';
+import AddColor from './components/addColor';
+import AdminTools from './components/adminTools';
+import DeleteCategory from './components/deleteCategory';
+import MyOrders from './components/myOrders';
 
 
 const isLoggedIn = Cookies.get("userData");
@@ -43,8 +50,9 @@ function App() {
 
   return (
     <main style={{ margin: 0 }}>
-
+  <CategoryProvider> 
       <ShoppingCartProvider>
+        
         <ThemeProvider theme={themes}>
           <BrowserRouter>
             <Menu />
@@ -61,12 +69,16 @@ function App() {
                   <Route path='/pedidos' element={<Orders user={role} />} />
                   <Route path='/resume' element={<Resume />} />
                   <Route path='/aboutUs' element={<AboutUs />} />
+                  <Route path='/tools' element={<AdminTools user={role}/>} />
+                  <Route path='/misPedidos' element={<MyOrders user={role}/>} />
                 </Routes>
               {/* </Container> */}
             
           </BrowserRouter>
         </ThemeProvider>
+        
       </ShoppingCartProvider>
+      </CategoryProvider>
     </main>
   )
 }

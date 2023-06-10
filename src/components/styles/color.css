@@ -1,0 +1,17 @@
+#mainColor{
+   
+    display: grid;
+    place-content: center;
+}
+#divForm{
+    background-color: white;
+    display: grid;
+    height: 10rem;
+    width: 13rem;
+    border-radius: 5px;
+    box-shadow: 0 0 6px 0 rgba(255,255,255, 0.8);
+}
+#colorform{
+
+margin: 5px;
+}

@@ -149,6 +149,7 @@ export default function Pay(user) {
             email:data.body.email
             
         }
+        
         console.log("TICKET DE SALIDA ",ticket)
         
         // {cart.map((item) => (
@@ -156,7 +157,7 @@ export default function Pay(user) {
         //   ))}
 
 
-        const res = await fetch('https://novedades-rosy-api-production.up.railway.app/new/pay', {
+        const res = await fetch('https://novedades-rosy-api-production.up.railway.app/pay', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -169,25 +170,23 @@ export default function Pay(user) {
             console.log(data)
             if(data.message){
               console.log("pago en data.msg")
-              
-                alert(data.message)
-                localStorage.clear()
-
-
-                
-                setCart(0)                                // 
-
-                navigate("/resume", {state:{ticket}})
+              alert(data.message)
+              setCart([])                                // 
+              navigate("/resume", {state:{ticket}})
 
             }
-            else {
+            else if(data.error){
               console.log("pago en else")
-                alert(data)
+                alert(data.error)
+                navigate("/" )
             }
             
        
           
         })
+      }
+      else if(error){
+        alert("OCURRIO UN ERROR CON EL PAGO, redirigiendo")
       }
     };
     
@@ -295,7 +294,7 @@ console.log("suma total", sum);
               <h4 id="Cartresum">Total de carrito:{sum}</h4>
               {cart.map((item) => (
                 <div id="item">
-                  {item.name} {item.quantity} X {item.price}
+                  {item.name} {item.color} {item.tamano} {item.quantity} X {item.price}
                 </div>
               ))}
             </div>

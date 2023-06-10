@@ -9,12 +9,12 @@ import Cookies from 'js-cookie';
 const DropdownButton = (props) => {
 
   const isLoggedIn = Cookies.get('userData');
-  console.log(isLoggedIn)
+  //console.log(isLoggedIn)
   const data = JSON.parse(isLoggedIn?.toString() || "{}")
-  console.log("body",data)
+  //console.log("body",data)
   const role = data && data.body ? data.body.role : undefined;
   const user = data && data.body ? data.body.email : undefined;
-  console.log(role)
+  //console.log(role)
 
  
   const [anchorEl, setAnchorEl] = useState(null);
@@ -74,7 +74,12 @@ const DropdownButton = (props) => {
       }
       {
         role === "tr" && 
+        <MenuItem onClick={() => { navigate("/tools"); handleClose() }} >Herramientas </MenuItem>
+      }
+      {
+        role === "tr" && 
         <MenuItem onClick={() => { navigate("/pedidos"); handleClose() }} >Pedidos </MenuItem>
+        
       }
       {
         user !== undefined && 

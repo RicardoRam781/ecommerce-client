@@ -1,0 +1,48 @@
+#addForms{
+    display: flex;
+   
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.toolsimg{
+    width: 100px;
+    height: 100px;
+}
+.divImgTools{
+  
+    display: grid;
+    place-content: center;
+    padding: 30px;
+}
+#warningTool{
+    border-top: 1px solid black;
+    margin-top: 50px;
+}
+#mainTools{
+   
+    display: grid;
+    
+  
+}
+#deleteForms{
+    display: flex;
+    padding: 50px;
+    
+    margin-top: 50px;
+    justify-content: space-around;
+}
+
+@media screen and (max-width:820px){
+    #addForms{
+        
+        display: grid;
+        align-items: center;
+        justify-content: center;
+    }
+    #deleteForms{
+       
+        display: grid;
+    }
+    
+}

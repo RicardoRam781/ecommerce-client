@@ -1,4 +1,4 @@
-import { useState, } from "react";
+import { useState,useEffect } from "react";
 //import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import { Alert } from "@mui/material";
@@ -9,16 +9,28 @@ export default function Products(user) {
   console.log("USUARIO EN FOREM",user.user)
   
   const [form, setForm] = useState({})
-
+  const [dataa,setDataa] = useState([])
   const [file, setFile] = useState();
+  const [update, setUpdate] = useState(false)
 
+  useEffect(() =>{
+
+    const getData = async () =>{
+      const res = await fetch("https://novedades-rosy-api-production.up.railway.app/categorys")
+      const data = await res.json()
+      console.log("Categorias dsiponibles",data)
+      setDataa(data)
+      setUpdate(!update)
+    }
+    getData()
+  },[])
   const handleFile = (e) => {
     setFile(e.target.files[0])
     console.log(e.target.files[0])
   }
 
   if(user.user !== 'tr'){
-    console.log("SI entra al if")
+    
      window.location.replace("/")
     }
   const [files, setFiles] = useState([])
@@ -38,9 +50,9 @@ export default function Products(user) {
       formData.append('filess', files[i]);
     }
 
-
+    console.log("formadata",form)
     formData.append("form", JSON.stringify(form));
-    const res = await fetch('http://localhost:4000/api', {
+    const res = await fetch('https://novedades-rosy-api-production.up.railway.app/api', {
       method: 'POST',
       headers:{
         'Authorization': `Bearer ${data.token}`
@@ -54,16 +66,19 @@ export default function Products(user) {
 
       
     })
-
+    
+    
+    
   }
 
-
+ 
   const handleChange = (e) => {
 
     setForm({ ...form, [e.target.name]: e.target.value })
     console.log(e.target.name, e.target.value);
 
   }
+  
 
   return (
     <div className='cont'>
@@ -82,9 +97,18 @@ export default function Products(user) {
           name="description" value={form.description}
           onChange={handleChange}></input>
 
-        <input className="inputs" placeholder="Categoria"
+        {/* <input className="inputs" placeholder="Categoria"
           name="cat" value={form.category}
-          onChange={handleChange}></input>
+          onChange={handleChange}></input> */}
+
+          <select value={form.category} onChange={handleChange} name="cat">
+            <option>Seleccionar categoria</option>
+          {
+          dataa.map((item) =>{
+            return <option key={item.id}>{item.nombre}</option>
+          })
+          }
+          </select>
 
         <input className="inputs" placeholder="Inventario"
           name="quanty" value={form.quanty}

@@ -30,6 +30,7 @@ const removeOne = (productId) => {
 
                 <img id='img' src={props.img} alt="product-primary-img" />
                 <h4  id='title2' key={props.id}> {props.name} </h4>
+                <p>{props.color} {props.tamaño}</p>
                 <h3>${props.price}</h3>
                         
                         

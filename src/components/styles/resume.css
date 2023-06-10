@@ -1,7 +1,7 @@
 #mainResume{
     display: grid;
     place-content: center;
-    height: 100vh;
+    height: 91vh;
     
 }
 #divResume{
@@ -21,6 +21,14 @@
 #resum{
    
     box-shadow: 1px 1px 1px 1px grey;
-    height: 20rem;
+    height: 100%;
     width: 25rem;
+}
+@media screen and (max-width:780px){
+    #divResume{
+        width: 20rem;
+    }
+    #resum{
+        height: 100%;
+    }
 }

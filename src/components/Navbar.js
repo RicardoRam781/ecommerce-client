@@ -9,6 +9,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import { CartContext } from './cartContext'
 import Cookies from 'js-cookie';
 import TemporaryDrawer from './drawer'
+import { CategoryContext } from './categoryContext'
 
 const useStyles = makeStyles(theme => ({
     offset: theme.mixins.Toolbar,
@@ -36,8 +37,16 @@ const themes = createTheme({
 export default function Navbar(props) {
     const clasess = useStyles();
     const navigate = useNavigate();
-
-
+    const [category,setCategory] = useContext(CategoryContext)
+    const handleMain = () => {
+        console.log("HANDLEMAIN")
+        const a = "general"
+        setCategory(a)
+      }
+      const nav = () =>{
+        navigate("/")
+      }
+      
 
 
 const isLoggedIn = Cookies.get('userData');
@@ -112,7 +121,7 @@ const validate = () =>{
                             </Hidden> */}
                             
                             <Typography variant='h6' sx={{ flexGrow: 1 }}>
-                                <Link to="/" style={{ textDecoration: "none", color:hexToRgb('#2E5B27')  ,  fontFamily: 'Helvetica Neue Italic', fontStyle:'italic', fontSize:'2rem'}} onClick={() => navigate("/index")}>Novedades Rubí</Link>
+                                <Link to="/" style={{ textDecoration: "none", color:hexToRgb('#2E5B27')  ,  fontFamily: 'Helvetica Neue Italic', fontStyle:'italic', fontSize:'2rem'}} onClick={() => {handleMain(); nav()}}>Novedades Rubí</Link>
                             </Typography>
                             <Button startIcon={<ShoppingCartIcon />} color='secondary' onClick={() => validate()}>
                                 {userId && quanty}

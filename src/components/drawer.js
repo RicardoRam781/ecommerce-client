@@ -8,7 +8,23 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import {useNavigate} from 'react-router-dom';
+import { useState,useContext } from 'react'
+import { CategoryContext } from './categoryContext';
 export default function TemporaryDrawer() {
+  
+  const [category,setCategory] = useContext(CategoryContext)
+
+  React.useEffect(() =>{
+    getData()
+  },[])
+  const [dataa,setDataa] = useState([])
+  const getData = async () =>{
+    const res = await fetch("https://novedades-rosy-api-production.up.railway.app/categorys")
+    const data = await res.json()
+    console.log("Categorias dsiponibles",data)
+    setDataa(data)
+  }
+
   const [state, setState] = React.useState({
     top: false,
     left: false,
@@ -23,7 +39,20 @@ export default function TemporaryDrawer() {
 
     setState({ ...state, [anchor]: open });
   };
-
+  const handleClick = (e) =>{
+    console.log(e.target.textContent)
+    setCategory(e.target.textContent)
+    
+  }
+  const handleMain = () => {
+    console.log("HANDLEMAIN")
+    const a = "general"
+    setCategory(a)
+  }
+  const nav = () =>{
+    navigate("/")
+  }
+  
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -35,7 +64,7 @@ export default function TemporaryDrawer() {
         
       <List>
       <ListItemButton> 
-      <ListItem to="/"  style={{ textDecoration: '', color:"black"  ,  fontFamily: 'arial',  fontSize:'1.5rem'}} onClick={() => navigate("/")}>Inicio</ListItem>
+      <ListItem to="/"  style={{ textDecoration: '', color:"black"  ,  fontFamily: 'arial',  fontSize:'1.5rem'}} onClick={() => {handleMain(); nav()}}>Inicio</ListItem>
       </ListItemButton>
       <ListItemButton> 
       <ListItem to="/" style={{ textDecoration: 'none', color:"black"  ,  fontFamily: 'arial',  fontSize:'1.5rem'}} onClick={() => navigate("/aboutUs")}>Contacto</ListItem>
@@ -43,16 +72,16 @@ export default function TemporaryDrawer() {
       </List>
       <Divider />
       <List>
-        <ListItem>Categorías</ListItem>        
-        <ListItemButton>
-          <ListItem>Jardineria</ListItem>
-        </ListItemButton>
-        <ListItemButton>
-          <ListItem>Hogar</ListItem>
-        </ListItemButton>
-        <ListItemButton>
-          <ListItem>Descuentos</ListItem>
-        </ListItemButton>
+        <ListItem>Categorías</ListItem>
+        {
+          dataa.map((item) =>{
+            return <ListItemButton onClick={handleClick} key={item.id}>
+                   <ListItem >{item.nombre}</ListItem>
+                    </ListItemButton>
+          })
+        }
+        
+        
         {/* {['All mail', 'Trash', 'Spam'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>

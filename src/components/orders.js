@@ -10,7 +10,7 @@ export default function Orders() {
   //const role = data && data.body ? data.body.role : undefined;
   //const userId = data && data.body ? data.body._id : undefined;
     const [order, setOrder] = useState([])
-    console.log("ORDER DE USESTATE",order)
+    
     
   const getOrders = useCallback(async () => {
     const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/orders", {
@@ -21,7 +21,7 @@ export default function Orders() {
     });
     const orders = await res.json();
     setOrder(orders);
-    console.log("ORDERS",orders);
+   
   }, [data.token]);
     useEffect(() => {
         
@@ -35,7 +35,7 @@ export default function Orders() {
     {order.map(ord => {
         
       return (
-        <RenderOrders total = {ord.total} email = {ord.email} date = {ord.date} pedido = {ord.pedido} direccion = {ord.direccion} id ={ord.id}/>
+        <RenderOrders total = {ord.total} email = {ord.email} date = {ord.date} pedido = {ord.pedido} direccion = {ord.direccion} id ={ord.id} color= {ord.color} tamaño={ord.tamano}/>
         
         // <div id='renderOrder'>
         //   <p>{ord.total}</p>
