@@ -39,7 +39,7 @@ export default function AddTotalProduct() {
       getColors();
       getSizes();
     }, []);
-    const formData = new FormData();
+    //const formData = new FormData();
     
     
     

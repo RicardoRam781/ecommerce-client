@@ -28,7 +28,7 @@ export default function DeleteCategory() {
       
       
     }, [id]);
-    const formData = new FormData();
+    //const formData = new FormData();
     
     
     
@@ -61,12 +61,12 @@ export default function DeleteCategory() {
           
       }
 
-      const productChange = (e) =>{
-        const secondary = e.target.value
-        const secondaryID = secondary.split(" ")[0]
-        console.log("SECONDARY ID",secondaryID)
-        setId(secondaryID)
-      }
+      // const productChange = (e) =>{
+      //   const secondary = e.target.value
+      //   const secondaryID = secondary.split(" ")[0]
+      //   console.log("SECONDARY ID",secondaryID)
+      //   setId(secondaryID)
+      // }
 
   return (
     <main id='formMain'>

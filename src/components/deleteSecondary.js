@@ -30,9 +30,9 @@ export default function DeleteSecondaryProduct() {
                 'Authorization': `Bearer ${data.token}`
                 },
           });
-          const data = await res.json();
-          console.log("TOTAL DE PRODUCTOS RELACIONADOS",data)
-          setTotalProducts(data)
+          const datas = await res.json();
+          console.log("TOTAL DE PRODUCTOS RELACIONADOS",datas)
+          setTotalProducts(datas)
       }
       getProductsSecondary()
       
@@ -40,7 +40,7 @@ export default function DeleteSecondaryProduct() {
       getProducts();
       
     }, [id]);
-    const formData = new FormData();
+    //const formData = new FormData();
     
     
     
@@ -55,7 +55,7 @@ export default function DeleteSecondaryProduct() {
             },
       })
       const datas = await res.json()
-
+      datas
         
     }
  

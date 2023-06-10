@@ -10,7 +10,7 @@ export default function RenderOrders(props) {
   
  const obj =  JSON.parse(props.pedido)
   console.log(obj)
-  const [loading,setLoading] = useState(false)
+  const [loading] = useState(false)
   useEffect(() =>{
 
   },[loading])

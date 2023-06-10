@@ -15,12 +15,13 @@ export default function MyOrders() {
             setOrder(datas)
         }
         getData()
+        // eslint-disable-next-line
     },[])
   return (
     <div>
         {
             order.map((ord) =>{
-                <RenderOrders total = {ord.total} email = {ord.email} date = {ord.date} pedido = {ord.pedido} direccion = {ord.direccion} id ={ord.id} color= {ord.color} tamaño={ord.tamano}/>
+               return  <RenderOrders total = {ord.total} email = {ord.email} date = {ord.date} pedido = {ord.pedido} direccion = {ord.direccion} id ={ord.id} color= {ord.color} tamaño={ord.tamano}/>
                
             })
         }

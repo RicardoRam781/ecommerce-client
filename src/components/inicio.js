@@ -23,6 +23,7 @@ export default function Products(user) {
       setUpdate(!update)
     }
     getData()
+    // eslint-disable-next-line
   },[])
   const handleFile = (e) => {
     setFile(e.target.files[0])

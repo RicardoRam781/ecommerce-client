@@ -18,7 +18,7 @@ export default function AddCategory() {
           getSizes()
     },[])
 
-    const [form, setForm] = useState({})
+    
     const [name,setName] = useState({})
     const handleSubmit = async (e) =>{
         

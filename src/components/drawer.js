@@ -12,7 +12,7 @@ import { useState,useContext } from 'react'
 import { CategoryContext } from './categoryContext';
 export default function TemporaryDrawer() {
   
-  const [category,setCategory] = useContext(CategoryContext)
+  const [setCategory] = useContext(CategoryContext)
 
   React.useEffect(() =>{
     getData()

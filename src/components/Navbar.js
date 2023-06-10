@@ -37,7 +37,7 @@ const themes = createTheme({
 export default function Navbar(props) {
     const clasess = useStyles();
     const navigate = useNavigate();
-    const [category,setCategory] = useContext(CategoryContext)
+    const [setCategory] = useContext(CategoryContext)
     const handleMain = () => {
         console.log("HANDLEMAIN")
         const a = "general"

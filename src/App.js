@@ -17,12 +17,8 @@ import Cookies from "js-cookie";
 import Resume from './components/resume';
 import Orders from './components/orders';
 import AboutUs from './aboutUs';
-import FormsPrueba from './components/formsprueba';
-
 import CategoryProvider from './components/categoryContext';
-import AddColor from './components/addColor';
 import AdminTools from './components/adminTools';
-import DeleteCategory from './components/deleteCategory';
 import MyOrders from './components/myOrders';
 
 

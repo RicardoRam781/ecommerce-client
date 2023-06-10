@@ -17,7 +17,7 @@ export default function AddSize() {
           getSizes()
     },[])
     
-    const [form, setForm] = useState({})
+    
     const [name,setName] = useState({})
     const handleSubmit = async (e) =>{
         

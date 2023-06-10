@@ -8,7 +8,7 @@ export default function AddColor() {
 
     console.log("USUARIO EN COLOR",)
     const [color,setColor] = useState([])
-    const [form, setForm] = useState({})
+    const [form] = useState({})
     const [name,setName] = useState({})
     useEffect(() =>{
         const getColors = async () => {
