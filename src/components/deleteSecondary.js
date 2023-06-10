@@ -54,8 +54,9 @@ export default function DeleteSecondaryProduct() {
             'Authorization': `Bearer ${data.token}`
             },
       })
+      // eslint-disable-next-line
       const datas = await res.json()
-      datas
+      
         
     }
  
