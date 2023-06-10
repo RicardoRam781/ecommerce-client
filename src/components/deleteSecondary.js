@@ -38,7 +38,7 @@ export default function DeleteSecondaryProduct() {
       
 
       getProducts();
-      
+      // eslint-disable-next-line
     }, [id]);
     //const formData = new FormData();
     

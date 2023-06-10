@@ -14,7 +14,8 @@ export default function AdminTools(user) {
     window.location.replace("/")
   }
   const isLoggedIn = Cookies.get("userData");
-  //const data = JSON.parse(isLoggedIn?.toString() || "{}");
+  // eslint-disable-next-line
+  const data = JSON.parse(isLoggedIn?.toString() || "{}");
 
   console.log("USER EN ADMIN TOOLS",user)
   return (
