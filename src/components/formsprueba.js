@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './styles/prueba.css'
-
+import Cookies from "js-cookie";
 
 
 export default function AddTotalProduct() {
+
+   const isLoggedIn = Cookies.get("userData");
+    const data = JSON.parse(isLoggedIn?.toString() || "{}");
     const [product, setProduct] = useState([]);
     const [color, setColor] = useState([])
     const [size, setSize] = useState([])
@@ -51,7 +54,8 @@ export default function AddTotalProduct() {
         const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/secondary/product`,{
             method: 'POST',
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': `Bearer ${data.token}`
             },
             body: JSON.stringify(form)
           })
