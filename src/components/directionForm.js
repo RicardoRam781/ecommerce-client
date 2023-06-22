@@ -21,7 +21,7 @@ export default function DirectionForm(props) {
       console.log("dentro de submit")
       console.log(direc)
       direc['id'] = userId
-      const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/direccion`,{
+      const res = await fetch(`http://localhost:4000/direccion`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

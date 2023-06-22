@@ -140,7 +140,7 @@ const handleClick = async (e) => {
   
    const id = product.id
    console.log('click',id)
-  const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/delete/product/${id}`, {
+  const res = await fetch(`http://localhost:4000/delete/product/${id}`, {
     headers:{
       'Authorization': `Bearer ${data.token}`
       },
@@ -200,7 +200,7 @@ const handleClick = async (e) => {
   useEffect(() => {
     const result = totalProducts.find(item => item.color === color && item.tamano === size);
     if (result) {
-      console.log(result)
+      console.log("DEGUB RESULT",result)
       setPrice(result.precio);
       setDiscount(result.precio_descuento)
       setSelectedProduct(result)

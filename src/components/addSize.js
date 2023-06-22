@@ -7,7 +7,7 @@ export default function AddSize() {
     const [size,setSize] = useState([])
     useEffect(() =>{
         const getSizes = async () => {
-            const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/sizes", {
+            const res = await fetch("http://localhost:4000/get/sizes", {
               method: 'GET'
             });
             const data = await res.json();
@@ -27,7 +27,7 @@ export default function AddSize() {
         formData.append("Nombre", name)
         
         
-        const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/new/tamanos`,{
+        const res = await fetch(`http://localhost:4000/new/tamanos`,{
             method:'POST',
             headers:{
                 'Authorization': `Bearer ${data.token}`

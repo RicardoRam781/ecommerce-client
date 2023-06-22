@@ -6,6 +6,12 @@
 
     
 }
+#divOrder{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #renderOrder{
     background-color: whitesmoke;
     margin: 10px;
@@ -32,6 +38,19 @@
     width: 33%;
     
     margin: 5px;
+}
+#renderOrderNEW{
+    background-color: whitesmoke;
+    margin: 10px;
+    
+    width: 50rem;
+    border: 3px solid rgb(56, 134, 111) ;
+    
+    border-radius: 5px;
+    display: flex;
+    justify-content: left;
+
+    
 }
 @media screen and (max-width:780px){
     #renderOrder{

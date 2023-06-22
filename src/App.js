@@ -20,6 +20,7 @@ import AboutUs from './aboutUs';
 import CategoryProvider from './components/categoryContext';
 import AdminTools from './components/adminTools';
 import MyOrders from './components/myOrders';
+import Ticket from './components/ticket';
 
 
 const isLoggedIn = Cookies.get("userData");
@@ -51,10 +52,18 @@ function App() {
         
         <ThemeProvider theme={themes}>
           <BrowserRouter>
-            <Menu />
+          
+            
             
               {/* <Container style={{ margin: "auto" }} maxWidth="xl">     */}
+             
+              
+                
+              <Menu/>
                 <Routes>
+                  
+                  
+                  <Route path='/ticket' element={<Ticket/>}></Route>
                   <Route path='/product/addProduct' element={<Products user={role} />} />
                   <Route path='/' element={< RenderProduct user={role} />} />
                   <Route path='/product/:id' element={< ProductDetails user={role} />} />
@@ -67,6 +76,8 @@ function App() {
                   <Route path='/aboutUs' element={<AboutUs />} />
                   <Route path='/tools' element={<AdminTools user={role}/>} />
                   <Route path='/misPedidos' element={<MyOrders user={role}/>} />
+                  
+                  
                 </Routes>
               {/* </Container> */}
             

@@ -15,7 +15,7 @@ export default function DeleteSecondaryProduct() {
     const [form, setForm] = useState({})
     useEffect(() => {
       const getProducts = async () => {
-        const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/primary", {
+        const res = await fetch("http://localhost:4000/get/primary", {
           method: 'GET',
           
         });
@@ -24,7 +24,7 @@ export default function DeleteSecondaryProduct() {
       };
       const getProductsSecondary = async () =>{
         console.log("ID", id)
-        const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/products/total/${id}`, {
+        const res = await fetch(`http://localhost:4000/get/products/total/${id}`, {
             method: 'GET',
             headers:{
                 'Authorization': `Bearer ${data.token}`
@@ -48,7 +48,7 @@ export default function DeleteSecondaryProduct() {
         e.preventDefault();
        console.log("ID EN HANDLESUBMIT",id)
         
-      const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/delete/secondary/${id}`,{
+      const res = await fetch(`http://localhost:4000/delete/secondary/${id}`,{
         method:"DELETE",
         headers:{
             'Authorization': `Bearer ${data.token}`
@@ -71,7 +71,7 @@ export default function DeleteSecondaryProduct() {
         console.log("IDDDD", productId)
         const getProductsSecondary = async () =>{
             console.log("ID", id)
-            const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/products/total/${productId}`, {
+            const res = await fetch(`http://localhost:4000/get/products/total/${productId}`, {
                 method: 'GET',
                 headers:{
                     'Authorization': `Bearer ${data.token}`

@@ -1,0 +1,11 @@
+#mainTicket{
+
+    height: 100vh;
+    display: grid;
+    place-content: center;
+    
+}
+#ticket{
+    border: dotted 1px black;
+    padding: 10px;
+}

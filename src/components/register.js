@@ -17,7 +17,7 @@ export default function Register(props) {
     console.log(NewUser)
     
     
-      const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/new/user`,{
+      const res = await fetch(`http://localhost:4000/new/user`,{
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

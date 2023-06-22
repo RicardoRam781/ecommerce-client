@@ -25,7 +25,7 @@ export default function EditForm(productId) {
     console.log(id.productId);
     
     
-    const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/update/${id.productId}`,{
+    const res = await fetch(`http://localhost:4000/update/${id.productId}`,{
       method:'PUT',
       headers:{
         'Authorization': `Bearer ${data.token}`

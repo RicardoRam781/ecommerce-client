@@ -9,7 +9,7 @@ export default function MyOrders() {
     const [order,setOrder] = useState([])
     useEffect(() =>{
         const getData = async () =>{
-            const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/myOrders/${id}`)
+            const res = await fetch(`http://localhost:4000/myOrders/${id}`)
             const datas = await res.json()
             console.log(datas)
             setOrder(datas)

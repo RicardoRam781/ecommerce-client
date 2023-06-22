@@ -27,8 +27,9 @@ export default function AdminTools(user) {
 
         <AddColor />
         <AddSize/>
-        <AddTotalProduct />
         <AddCategory/>
+        <AddTotalProduct />
+       
        
         </div>
         <div className='divImgTools' id='warningTool'>
