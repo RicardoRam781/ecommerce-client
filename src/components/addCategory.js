@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 export default function AddCategory() {
     const isLoggedIn = Cookies.get("userData");
     const data = JSON.parse(isLoggedIn?.toString() || "{}");
-
+//prueba de commit
     const [category,setCategory] = useState([])
     useEffect(() =>{
         const getSizes = async () => {
