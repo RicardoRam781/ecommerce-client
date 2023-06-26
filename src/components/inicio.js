@@ -16,7 +16,7 @@ export default function Products(user) {
   useEffect(() =>{
 
     const getData = async () =>{
-      const res = await fetch("http://localhost:4000/categorys")
+      const res = await fetch("https://novedades-rosy-api-production.up.railway.app/categorys")
       const data = await res.json()
       console.log("Categorias dsiponibles",data)
       setDataa(data)
@@ -53,7 +53,7 @@ export default function Products(user) {
 
     console.log("formadata",form)
     formData.append("form", JSON.stringify(form));
-    const res = await fetch('http://localhost:4000/api', {
+    const res = await fetch('https://novedades-rosy-api-production.up.railway.app/api', {
       method: 'POST',
       headers:{
         'Authorization': `Bearer ${data.token}`

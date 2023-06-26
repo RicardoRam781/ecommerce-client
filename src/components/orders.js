@@ -50,12 +50,12 @@ export default function Orders() {
   socket.onerror = (error) => {
     console.error('Error en la conexión:', error);
   };
-    //http://localhost:4000
+    //https://novedades-rosy-api-production.up.railway.app
     //https://novedades-rosy-api-production.up.railway.app
   const getOrders = useCallback(async () => {
     
     
-    const res = await fetch("http://localhost:4000/get/orders", {
+    const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/orders", {
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${data.token}`

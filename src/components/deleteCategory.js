@@ -15,7 +15,7 @@ export default function DeleteCategory() {
     const [form, setForm] = useState({})
     useEffect(() => {
       const getCategorys = async () => {
-        const res = await fetch("http://localhost:4000/get/categorys", {
+        const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/categorys", {
           method: 'GET',
           
         });
@@ -36,7 +36,7 @@ export default function DeleteCategory() {
         e.preventDefault();
        console.log("ID EN HANDLESUBMIT",id)
         
-      const res = await fetch(`http://localhost:4000/delete/categorys/${id}`,{
+      const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/delete/categorys/${id}`,{
         method:"DELETE",
         headers:{
             'Authorization': `Bearer ${data.token}`

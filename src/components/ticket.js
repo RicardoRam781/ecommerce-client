@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import './styles/ticket.css'
-import { BrowserRouter as Router, Route, Routes, useNavigate, useLocation } from 'react-router-dom';
+import {useNavigate, useLocation } from 'react-router-dom';
 export default function Ticket(props) {
     const navigate = useNavigate()
     console.log("PROPSS",props)

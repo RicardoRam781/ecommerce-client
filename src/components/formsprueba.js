@@ -13,7 +13,7 @@ export default function AddTotalProduct() {
     const [form, setForm] = useState({})
     useEffect(() => {
       const getProducts = async () => {
-        const res = await fetch("http://localhost:4000/get/primary", {
+        const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/primary", {
           method: 'GET'
         });
         const data = await res.json();
@@ -21,7 +21,7 @@ export default function AddTotalProduct() {
       };
 
       const getColors = async () => {
-        const res = await fetch("http://localhost:4000/get/colors", {
+        const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/colors", {
           method: 'GET'
         });
         const data = await res.json();
@@ -30,7 +30,7 @@ export default function AddTotalProduct() {
       };
 
       const getSizes = async () => {
-        const res = await fetch("http://localhost:4000/get/sizes", {
+        const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/sizes", {
           method: 'GET'
         });
         const data = await res.json();
@@ -51,7 +51,7 @@ export default function AddTotalProduct() {
         const toSend = JSON.stringify(form)
         console.log("tosend",toSend)
         
-        const res = await fetch(`http://localhost:4000/secondary/product`,{
+        const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/secondary/product`,{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',

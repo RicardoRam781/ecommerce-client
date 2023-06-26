@@ -16,7 +16,7 @@ export default function Discount() {
     const [form, setForm] = useState({})
     useEffect(() => {
       const getProducts = async () => {
-        const res = await fetch("http://localhost:4000/get/primary", {
+        const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/primary", {
           method: 'GET',
           
         });
@@ -27,7 +27,7 @@ export default function Discount() {
       };
       const getProductsSecondary = async () =>{
         console.log("ID", id)
-        const res = await fetch(`http://localhost:4000/get/products/total/${id}`, {
+        const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/products/total/${id}`, {
             method: 'GET',
             headers:{
                 'Authorization': `Bearer ${data.token}`
@@ -52,7 +52,7 @@ export default function Discount() {
        console.log("ID EN HANDLESUBMIT",id)
         console.log("FORMDATA",form)
         formData.append("info", JSON.stringify(form))
-      const res = await fetch(`http://localhost:4000/discount`,{
+      const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/discount`,{
         method:"POST",
         headers:{
             'Authorization': `Bearer ${data.token}`
@@ -77,7 +77,7 @@ export default function Discount() {
        
         const getProductsSecondary = async () =>{
            
-            const res = await fetch(`http://localhost:4000/get/products/total/${productId}`, {
+            const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/products/total/${productId}`, {
                 method: 'GET',
                 headers:{
                     'Authorization': `Bearer ${data.token}`

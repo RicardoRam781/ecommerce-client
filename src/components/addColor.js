@@ -12,7 +12,7 @@ export default function AddColor() {
     const [name,setName] = useState({})
     useEffect(() =>{
         const getColors = async () => {
-            const res = await fetch("http://localhost:4000/get/colors", {
+            const res = await fetch("https://novedades-rosy-api-production.up.railway.app/get/colors", {
               method: 'GET'
             });
             const data = await res.json();
@@ -30,7 +30,7 @@ export default function AddColor() {
         formData.append("Nombre", name)
         
         
-        const res = await fetch(`http://localhost:4000/new/colores`,{
+        const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/new/colores`,{
             method:'POST',
             headers:{
                 'Authorization': `Bearer ${data.token}`

@@ -19,7 +19,7 @@ export default function TemporaryDrawer() {
   },[])
   const [dataa,setDataa] = useState([])
   const getData = async () =>{
-    const res = await fetch("http://localhost:4000/categorys")
+    const res = await fetch("https://novedades-rosy-api-production.up.railway.app/categorys")
     const data = await res.json()
     console.log("Categorias dsiponibles",data)
     setDataa(data)

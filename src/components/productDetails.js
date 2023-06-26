@@ -40,7 +40,7 @@ export default function ProductDetails(props) {
   // }, [cart]);
   useEffect(() =>{
     const getProducts = async () =>{
-      const res = await fetch(`http://localhost:4000/get/products/total/${product.id}`, {
+      const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/products/total/${product.id}`, {
           method: 'GET'
         });
         const data = await res.json();
@@ -140,7 +140,7 @@ const handleClick = async (e) => {
   
    const id = product.id
    console.log('click',id)
-  const res = await fetch(`http://localhost:4000/delete/product/${id}`, {
+  const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/delete/product/${id}`, {
     headers:{
       'Authorization': `Bearer ${data.token}`
       },

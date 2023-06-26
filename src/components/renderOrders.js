@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Cookies from 'js-cookie';
 import './styles/orders.css'
-import moment from 'moment'
-import Ticket from './ticket';
+
 import { useNavigate } from 'react-router-dom'
 
 export default function RenderOrders(props) {
@@ -27,7 +26,7 @@ export default function RenderOrders(props) {
     if(confirm){
        
         console.log("confirmado",id )
-        const result = await fetch(`http://localhost:4000/delete/order/${id}`,{
+        const result = await fetch(`https://novedades-rosy-api-production.up.railway.app/delete/order/${id}`,{
             method:"DELETE",
             headers:{
                 'Authorization': `Bearer ${data.token}`,
