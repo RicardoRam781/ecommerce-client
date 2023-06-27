@@ -10,7 +10,7 @@ export default function Orders() {
   
     const isLoggedIn = Cookies.get("userData");
   const data = JSON.parse(isLoggedIn?.toString() || "{}");
-  const socket = new WebSocket('wss://novedades-rosy-api-production.up.railway.app:443')
+  const socket = new WebSocket('ws://novedades-rosy-api-production.up.railway.app:80')
   //const role = data && data.body ? data.body.role : undefined;
   //const userId = data && data.body ? data.body._id : undefined;
   const [order, setOrder] = useState([])
