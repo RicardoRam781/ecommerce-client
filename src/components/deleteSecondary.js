@@ -22,6 +22,7 @@ export default function DeleteSecondaryProduct() {
         const data = await res.json();
         setProduct(data);
       };
+
       const getProductsSecondary = async () =>{
         console.log("ID", id)
         const res = await fetch(`https://novedades-rosy-api-production.up.railway.app/get/products/total/${id}`, {
@@ -39,7 +40,7 @@ export default function DeleteSecondaryProduct() {
 
       getProducts();
       // eslint-disable-next-line
-    }, [id]);
+    }, []);
     //const formData = new FormData();
     
     
@@ -63,7 +64,7 @@ export default function DeleteSecondaryProduct() {
 
 
     const handleChange = (e) => {
-        console.log(form)
+        console.log("FORMM",form)
         setForm({ ...form, [e.target.name]: e.target.value })
         console.log(e.target.name, e.target.value);
         const productString = e.target.value
@@ -100,6 +101,7 @@ export default function DeleteSecondaryProduct() {
                
                 <label>Productos disponibles</label>
                 <select className='inputs' onChange={handleChange} name='producto'>
+                <option>Selecciona...</option>
                 {
                     product.map((item) =>{
                      return <option key={item.id}>{item.id} {item.productname}</option>
@@ -107,6 +109,7 @@ export default function DeleteSecondaryProduct() {
                 }
                 </select>
                 <select className='inputs' name='producto' onChange={productChange}>
+                  <option>Selecciona...</option>
                 {
                     totalProducts.map((item) =>{
                      return <option key={item.id}>{item.id} {item.producto},{item.color},{item.tamano} ${item.precio}</option>

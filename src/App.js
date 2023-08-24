@@ -21,6 +21,7 @@ import CategoryProvider from './components/categoryContext';
 import AdminTools from './components/adminTools';
 import MyOrders from './components/myOrders';
 import Ticket from './components/ticket';
+import Informes from './components/informes';
 
 
 const isLoggedIn = Cookies.get("userData");
@@ -76,6 +77,7 @@ function App() {
                   <Route path='/aboutUs' element={<AboutUs />} />
                   <Route path='/tools' element={<AdminTools user={role}/>} />
                   <Route path='/misPedidos' element={<MyOrders user={role}/>} />
+                  <Route path='/info' element={<Informes user={role}/>} />
                   
                   
                 </Routes>

@@ -76,6 +76,10 @@ const DropdownButton = (props) => {
         role === "tr" && 
         <MenuItem onClick={() => { navigate("/tools"); handleClose() }} >Herramientas </MenuItem>
       }
+       {
+        role === "tr" && 
+        <MenuItem onClick={() => { navigate("/info"); handleClose() }} >Informes </MenuItem>
+      }
       {
         role === "tr" && 
         <MenuItem onClick={() => { navigate("/pedidos"); handleClose() }} >Pedidos </MenuItem>

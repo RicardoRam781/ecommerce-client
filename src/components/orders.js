@@ -30,7 +30,7 @@ export default function Orders() {
   }
   socket.onopen = () =>{
     console.log("Conexion websocket establecida")
-    //socket.send("Hola servidor")
+    socket.send("Hola servidor")
   }
   socket.onmessage = (event) => {
     if(!control) {

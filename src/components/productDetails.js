@@ -270,7 +270,7 @@ const handleClick = async (e) => {
 
             { 
             // eslint-disable-next-line
-            discount  == 0 &&
+            discount  == 0 || discount == null &&
               <h3>${price} MXN</h3>
             }
             { discount > 0 &&

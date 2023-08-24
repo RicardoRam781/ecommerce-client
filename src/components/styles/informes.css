@@ -1,0 +1,19 @@
+#informeMain{
+    background-color: red;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+#reporte{
+    background-color: blue;
+    width: 85rem;
+    height: 40rem;
+    display: flex;
+
+}
+.info{
+    border: solid 1px black;
+    flex-grow: 1;
+    margin: 0;
+}
